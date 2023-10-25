@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Join with us!</title>
+    <style>
+      /* Reset default margin and padding */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Set the image as the background and cover the entire viewport */
+      body {
+        background-image: url("background_home.jpg"); /* Replace with your image file */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        height: 100vh; /* 100% of the viewport height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Center any content inside the body */
+      .content {
+        align-self: center;
+        text-align: center;
+        color: white;
+        padding: 20px;
+      }
+
+      .content {
+        background: rgba(0, 0, 0, 0.5); /* Adjust the transparency as needed */
+
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h2>Let join with us</h2>
+      <h1 id="name">Name: Loading...</h1>
+      <h2 id="location">Location: Loading...</h2>
+      <h2 id="date">Date: Loading...</h2>
+    </div>
+
+    <script>
+      // Function to extract query parameters from the URL
+      function getQueryParameter(parameterName) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(parameterName);
+      }
+
+      function displayData() {
+        const name = getQueryParameter("name");
+        const location = getQueryParameter("location");
+        const date = getQueryParameter("date");
+
+        // Display the data on the page
+        document.getElementById("name").textContent = `${name}`;
+        document.getElementById(
+          "location"
+        ).textContent = `Location: ${location}`;
+        document.getElementById("date").textContent = `Date: ${date}`;
+      }
+
+      // Call the displayData function when the page loads
+      window.onload = displayData;
+
+      // Call the displayData function when the page loads
+      window.onload = displayData;
+    </script>
+  </body>
+</html>
